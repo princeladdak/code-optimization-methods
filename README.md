@@ -15,11 +15,11 @@
 
 __A note on the relation between Computational Complexity of Algorithms and Code Optimization Techniques__
 
-Both computational complexity theory and code optimization techniques, have the common goal of efficient problem solution. While they are related to each other and share some concepts, the difference lies in what is emphasized at each time.
+Both computational complexity theory [24] and code optimization techniques [1], have the common goal of efficient problem solution. While they are related to each other and share some concepts, the difference lies in what is emphasized at each time.
 
 Computational complexity theory, studies the performance with respect to input data size. Trying to design algorithmic solutions that have the least / fastest dependence on data size, regardless of underlying architecture. Code optimization techniques, on the other hand, focus on the architecture and the specific constants which enter those computational complexity estimations.
 
-Systems that operate in Real-Time are examples where both factors can be critical. [1]
+Systems that operate in Real-Time are examples where both factors can be critical.
 
 
 ###General Principles
@@ -44,7 +44,7 @@ Some of the optimization techniques can be automated (eg in compilers), while ot
 
 Some times there is a trade-off between space/time resources. Increasing speed might result in increasing space/memory requirements (__caching__ is a classic example of that). 
 
-The 90-10 (or 80-20 or other variations) rule of thumb, states that __90 percent of the time__ is spent on __10 percent of the code__ (eg a loop). Optimizing this part of the code can result in great benefits. [7]
+The 90-10 (or 80-20 or other variations) rule of thumb, states that __90 percent of the time__ is spent on __10 percent of the code__ (eg a loop). Optimizing this part of the code can result in great benefits. (see for example  Knuth [7])
 
 One optimization technique (eg simplification) can lead to the application of another optimization technique (eg constant substitution) and this in turn can lead back to the further application of the first optimization technique (or others). Doors can open.
 
@@ -304,6 +304,7 @@ __TODO__
 ###References
 
 * http://en.wikipedia.org/wiki/Code_optimization
+* http://en.wikipedia.org/wiki/Computational_complexity_theory
 * http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 * http://en.wikipedia.org/wiki/KISS_principle
 * http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm
@@ -351,3 +352,4 @@ __TODO__
 [21]: http://en.wikipedia.org/wiki/Row-major_order
 [22]: http://en.wikipedia.org/wiki/Vectorization_%28mathematics%29
 [23]: http://en.wikipedia.org/wiki/Loop_unwinding
+[24]: http://en.wikipedia.org/wiki/Computational_complexity_theory
