@@ -105,7 +105,7 @@ __Arithmetic Operations__
 * __Constant Substitution/Propagation__ : Many times an expression is under all cases evaluated to a single constant, the constant value can be replaced instead of the more complex and slower expression (sometimes compilers do that).
 
 
-* __Inline Function/Routine Calls__ : Calling a function or routine, involves many operations from the part of the cpu, it has to push onto the stack the current program state and branch to another location, and then do the reverse procedure. This can be slow when used inside heavy-load operations, inlining the function body can be much faster without all this overhead (sometimes compilers do that).
+* __Inline Function/Routine Calls__ : Calling a function or routine, involves many operations from the part of the cpu, it has to push onto the stack the current program state and branch to another location, and then do the reverse procedure. This can be slow when used inside heavy-load operations, inlining the function body can be much faster without all this overhead (sometimes compilers do that). [17]
 
 
 * __Combining Flow Transfers__ : IF/THEN instructions and logic are, in essence, cpu branch instructions. Branch instructions involve changing the program pointer and going to a new location. This can be slower if many jump instructions are used. However re-arranging the IF/THEN statements (factorizing common code, using De Morgan's rules for logic simplification etc..) can result in isomorphic functionality with fewer and more efficient logic and as a result fewer and more efficient branch instructions
@@ -120,7 +120,7 @@ __Arithmetic Operations__
 * __Common Code Factorisation__ : Many times the same block of code is present in different branches, for example the program has to do some common functionality and then something else depending on some parameter. This common code can be factored out of the branches and thus eliminate unneeded redundancy , latency and size.
 
 
-* __Strength Reduction__ : This involves transforming an operation (eg an expression) into an equivalent one which is faster. Common cases involve replacing exponentiation with multiplication and multiplication with addition (eg inside a loop). This technique can result in great efficiency stemming from the fact that simpler but equivalent operations are several cpu cycles faster (usually implemented in hardware) than their more complex equivalents (usually implemented in software)
+* __Strength Reduction__ : This involves transforming an operation (eg an expression) into an equivalent one which is faster. Common cases involve replacing exponentiation with multiplication and multiplication with addition (eg inside a loop). This technique can result in great efficiency stemming from the fact that simpler but equivalent operations are several cpu cycles faster (usually implemented in hardware) than their more complex equivalents (usually implemented in software) [18]
 
 
 * __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful. [reference missing]
@@ -135,7 +135,7 @@ __Loop Optimizations__
 Perhaps the most important code optimization techniques are the ones involving loops.
 
 
-* __Code Motion / Loop Invariants__ : Sometimes code inside a loop is independent of the loop index, can be moved out of the loop and computed only once (it is a loop invariant). This results in the loop doing fewer operations (sometimes compilers do that).
+* __Code Motion / Loop Invariants__ : Sometimes code inside a loop is independent of the loop index, can be moved out of the loop and computed only once (it is a loop invariant). This results in the loop doing fewer operations (sometimes compilers do that). [19], [20]
 
 __example:__
 
@@ -219,7 +219,7 @@ else
 ```
 
 
-* __Array Linearization__ : This involves handling a multi-dimensional array in a loop, as if it was a (simpler) one-dimensional array. Most times multi-dimensional arrays (eg 2D arrays NxM) use a linearization scheme, when stored in memory. Same scheme can be used to access the array data as if it is one big 1-dimensional array. This results in using a single loop instead of multiple nested loops.
+* __Array Linearization__ : This involves handling a multi-dimensional array in a loop, as if it was a (simpler) one-dimensional array. Most times multi-dimensional arrays (eg 2D arrays NxM) use a linearization scheme, when stored in memory. Same scheme can be used to access the array data as if it is one big 1-dimensional array. This results in using a single loop instead of multiple nested loops. [21], [22]
 
 __example:__
 
@@ -246,7 +246,7 @@ for (i=0; i<400; i++)
 ```
 
 
-* __Loop Unrolling__ : Loop unrolling involves reducing the number of executions of a loop by performing the computations corresponding to two (or more) loop iterations in a single loop iteration. This is partial loop unrolling, full loop unrolling involves eliminating the loop completely and doing all the iterations explicitly in the code (for example for small loops where the number of iterations is fixed). Loop unrolling results in the loop (and as a consequence all the overhead associated with each loop iteration) executing fewer times. In processors which allow pipelining or parallel computations, loop unroling can have an additional benefit, the next unrolled iteration can start while the previous unrolled iteration is being computed or loaded without waiting to finish. Thus loop speed can increase even more.
+* __Loop Unrolling__ : Loop unrolling involves reducing the number of executions of a loop by performing the computations corresponding to two (or more) loop iterations in a single loop iteration. This is partial loop unrolling, full loop unrolling involves eliminating the loop completely and doing all the iterations explicitly in the code (for example for small loops where the number of iterations is fixed). Loop unrolling results in the loop (and as a consequence all the overhead associated with each loop iteration) executing fewer times. In processors which allow pipelining or parallel computations, loop unroling can have an additional benefit, the next unrolled iteration can start while the previous unrolled iteration is being computed or loaded without waiting to finish. Thus loop speed can increase even more. [23]
 
 __example:__
 
@@ -319,6 +319,13 @@ __TODO__
 * http://www.embedded.com/design/real-time-and-performance/4007256/Digital-Signal-Processing-Tricks--Fast-multiplication-of-complex-numbers
 * http://en.wikipedia.org/wiki/Strassen_algorithm
 * http://en.wikipedia.org/wiki/Coppersmith%E2%80%93Winograd_algorithm
+* http://en.wikipedia.org/wiki/Function_inlining
+* http://en.wikipedia.org/wiki/Strength_reduction
+* http://en.wikipedia.org/wiki/Loop_invariant
+* http://en.wikipedia.org/wiki/Loop-invariant_code_motion
+* http://en.wikipedia.org/wiki/Row-major_order
+* http://en.wikipedia.org/wiki/Vectorization_%28mathematics%29
+* http://en.wikipedia.org/wiki/Loop_unwinding
 
 
 [1]: http://en.wikipedia.org/wiki/Code_optimization
@@ -337,3 +344,10 @@ __TODO__
 [14]: http://www.embedded.com/design/real-time-and-performance/4007256/Digital-Signal-Processing-Tricks--Fast-multiplication-of-complex-numbers
 [15]: http://en.wikipedia.org/wiki/Strassen_algorithm
 [16]: http://en.wikipedia.org/wiki/Coppersmith%E2%80%93Winograd_algorithm
+[17]: http://en.wikipedia.org/wiki/Function_inlining
+[18]: http://en.wikipedia.org/wiki/Strength_reduction
+[19]: http://en.wikipedia.org/wiki/Loop_invariant
+[20]: http://en.wikipedia.org/wiki/Loop-invariant_code_motion
+[21]: http://en.wikipedia.org/wiki/Row-major_order
+[22]: http://en.wikipedia.org/wiki/Vectorization_%28mathematics%29
+[23]: http://en.wikipedia.org/wiki/Loop_unwinding
