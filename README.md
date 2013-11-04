@@ -144,12 +144,12 @@ __example:__
 // this can be transformed
 for (i=0; i<1000; i++)
 {
-    invariant = 100*a[0]+15; // this is a loop invariant, not depending on the loop index etc..
+    invariant = 100*b[0]+15; // this is a loop invariant, not depending on the loop index etc..
     a[i] = invariant+10*i;
 }
 
 // into this
-invariant = 100*a[0]+15; // now this is out of the loop
+invariant = 100*b[0]+15; // now this is out of the loop
 for (i=0; i<1000; i++)
 {
     a[i] = invariant+10*i; // loop executes fewer operations now
@@ -252,7 +252,7 @@ __example:__
 
 ```javascript
 
-// unrolled loop
+// "rolled" usual loop
 for (i=0; i<1000; i++)
 {
     a[i] = b[i]*c[i];
