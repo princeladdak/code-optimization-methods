@@ -99,7 +99,7 @@ __Arithmetic Operations__
 ###Language-independent optimization
 
 
-* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule [12],  Karatsuba Multiplication [13],  fast complex multiplication [14], fast matrix multiplication [15] [16].
+* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule [12],  Karatsuba Multiplication [13],  fast complex multiplication [14], fast matrix multiplication [15],  [16].
 
 
 * __Constant Substitution/Propagation__ : Many times an expression is under all cases evaluated to a single constant, the constant value can be replaced instead of the more complex and slower expression (sometimes compilers do that).
