@@ -99,7 +99,7 @@ __Arithmetic Operations__
 ###Language-independent optimization
 
 
-* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule [12],  Karatsuba Multiplication [13], and fast complex multiplication [14].
+* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule [12],  Karatsuba Multiplication [13],  fast complex multiplication [14], fast matrix multiplication [15] [16].
 
 
 * __Constant Substitution/Propagation__ : Many times an expression is under all cases evaluated to a single constant, the constant value can be replaced instead of the more complex and slower expression (sometimes compilers do that).
@@ -303,19 +303,23 @@ __TODO__
 
 ###References
 
-http://en.wikipedia.org/wiki/Code_optimization
-http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-http://en.wikipedia.org/wiki/KISS_principle
-http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm
-http://en.wikipedia.org/wiki/Parallel_computation
-http://en.wikipedia.org/wiki/Lazy_load
-http://www.cs.tufts.edu/~nr/cs257/archive/don-knuth/empirical-fortran.pdf
-http://en.wikipedia.org/wiki/Category:Compiler_optimizations
-http://en.wikipedia.org/wiki/Register_allocation
-Compiler Design Theory, 1976, Lewis, Rosenkrantz, Stearns
-The art of compiler design - Theory and Prcatice, 1992, Pittman, Peters
-http://en.wikipedia.org/wiki/Horner_rule
-http://en.wikipedia.org/wiki/Karatsuba_algorithm
+* http://en.wikipedia.org/wiki/Code_optimization
+* http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+* http://en.wikipedia.org/wiki/KISS_principle
+* http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm
+* http://en.wikipedia.org/wiki/Parallel_computation
+* http://en.wikipedia.org/wiki/Lazy_load
+* http://www.cs.tufts.edu/~nr/cs257/archive/don-knuth/empirical-fortran.pdf
+* http://en.wikipedia.org/wiki/Category:Compiler_optimizations
+* http://en.wikipedia.org/wiki/Register_allocation
+* Compiler Design Theory, 1976, Lewis, Rosenkrantz, Stearns
+* The art of compiler design - Theory and Prcatice, 1992, Pittman, Peters
+* http://en.wikipedia.org/wiki/Horner_rule
+* http://en.wikipedia.org/wiki/Karatsuba_algorithm
+* http://www.embedded.com/design/real-time-and-performance/4007256/Digital-Signal-Processing-Tricks--Fast-multiplication-of-complex-numbers
+* http://en.wikipedia.org/wiki/Strassen_algorithm
+* http://en.wikipedia.org/wiki/Coppersmith%E2%80%93Winograd_algorithm
+
 
 [1]: http://en.wikipedia.org/wiki/Code_optimization
 [2]: http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
@@ -331,3 +335,5 @@ http://en.wikipedia.org/wiki/Karatsuba_algorithm
 [12]: http://en.wikipedia.org/wiki/Horner_rule
 [13]: http://en.wikipedia.org/wiki/Karatsuba_algorithm
 [14]: http://www.embedded.com/design/real-time-and-performance/4007256/Digital-Signal-Processing-Tricks--Fast-multiplication-of-complex-numbers
+[15]: http://en.wikipedia.org/wiki/Strassen_algorithm
+[16]: http://en.wikipedia.org/wiki/Coppersmith%E2%80%93Winograd_algorithm
