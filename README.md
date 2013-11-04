@@ -123,7 +123,7 @@ __Arithmetic Operations__
 * __Strength Reduction__ : This involves transforming an operation (eg an expression) into an equivalent one which is faster. Common cases involve replacing exponentiation with multiplication and multiplication with addition (eg inside a loop). This technique can result in great efficiency stemming from the fact that simpler but equivalent operations are several cpu cycles faster (usually implemented in hardware) than their more complex equivalents (usually implemented in software)
 
 
-* __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful.
+* __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful. [reference missing]
 
 
 * __Exploiting Mathematical Theorems/Relations__ : Some times a computation can be performed in an equivalent but more efficient way by using some mathematical theorem, transformation or knowledge (eg. Gauss method of solving Systems of Linear equations, Fast Fourier Transforms, Fermat's Little Theorem,  Taylor-Mclaurin Series Expasions, Trigonometric Identities, etc..). This can go a long way. It is good to refresh your mathematical knowledge every now and then.
@@ -313,7 +313,7 @@ __TODO__
 * http://en.wikipedia.org/wiki/Category:Compiler_optimizations
 * http://en.wikipedia.org/wiki/Register_allocation
 * Compiler Design Theory, 1976, Lewis, Rosenkrantz, Stearns
-* The art of compiler design - Theory and Prcatice, 1992, Pittman, Peters
+* The art of compiler design - Theory and Practice, 1992, Pittman, Peters
 * http://en.wikipedia.org/wiki/Horner_rule
 * http://en.wikipedia.org/wiki/Karatsuba_algorithm
 * http://www.embedded.com/design/real-time-and-performance/4007256/Digital-Signal-Processing-Tricks--Fast-multiplication-of-complex-numbers
@@ -331,7 +331,7 @@ __TODO__
 [8]: http://en.wikipedia.org/wiki/Category:Compiler_optimizations
 [9]: http://en.wikipedia.org/wiki/Register_allocation
 [10]: Compiler Design Theory, 1976, Lewis, Rosenkrantz, Stearns
-[11]: The art of compiler design - Theory and Prcatice, 1992, Pittman, Peters
+[11]: The art of compiler design - Theory and Practice, 1992, Pittman, Peters
 [12]: http://en.wikipedia.org/wiki/Horner_rule
 [13]: http://en.wikipedia.org/wiki/Karatsuba_algorithm
 [14]: http://www.embedded.com/design/real-time-and-performance/4007256/Digital-Signal-Processing-Tricks--Fast-multiplication-of-complex-numbers
