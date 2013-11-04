@@ -77,8 +77,8 @@ __Binary Formats__
 __Arithmetic Operations__
 
 * Exponentiation is slow
-* Division is faster that exponentiation
-* Multiplication is faster that division
+* Division is faster than exponentiation
+* Multiplication is faster than division
 * Addition/Subtraction is faster than multiplication
 * Bitwise operations are fastest
 
