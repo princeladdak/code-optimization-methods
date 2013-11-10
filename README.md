@@ -297,7 +297,22 @@ Database Access can be expensive, this means it is usually better to fetch the n
 
 ###Web
 
-__TODO__
+* __Minimal Transactions__ : Data over the internet (and generally data over a network), take some time to be transmitted. More so if the data are large, therefore it is best to transmit only the necessary data, and even these in a compact form. That is one reason why JSON replaced the verbose XML for encoding of arbitrary data on the web.
+
+
+* __Minimum Number of Requests__ : This can be seen as a variaton of the previous principle. It means that not only each request should transmit only necessary data in a compact form, but also that the number of requests should be minimized. This can include, minifying .css files into one .css file (even embedding images if needed), minifying .js files into one .js file, etc.. This can sometimes generate large data (files), however coupled with the next tip, can result in better performance.
+
+
+* __Cache, cache and then cache some more__ : This can include everything, from whole pages, to .css files, .js files, images etc.. Cache in the server, cache in the client, cache in-between, cache everywhere..
+
+
+* __Exploiting Redundancy__ : For web applications, this is usually implemented by exploiting some cloud architecture in order to store (static) files, which can be loaded (through the cloud) from more than one location. Other approaches include, Load balancing (having redundancy not only for static files, but also for servers).
+
+
+* __Make application code faster/lighter__ : This draws from the previous principles about code optimization in general. Efficient application code can save both server and user resources. There is a reason why Facebook created HipHop VM ..
+
+
+* __Minimalism is an art form__ : Having web pages and applications with tons of html, images, (not to mention a ton of advertisements) etc, etc.. is not necessarily better design, and of course makes page load time slower. Therefore having minimal pages and doing updates in small chunks using AJAX and JSON (that is what web 2.0 was all about), instead of reloading a whole page each time, can go a long way. This is one reason why __Template Engines__ and __MVC Frameworks__ were created. Minimalism does not need to sacrifice the artistic dimension, minimalism IS an art form.
 
 
 
