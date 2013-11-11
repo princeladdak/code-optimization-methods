@@ -15,7 +15,7 @@
 
 __A note on the relation between Computational Complexity of Algorithms and Code Optimization Techniques__
 
-Both computational complexity theory [24] and code optimization techniques [1], have the common goal of efficient problem solution. While they are related to each other and share some concepts, the difference lies in what is emphasized at each time.
+Both computational complexity theory <sup> [24] </sup> and code optimization techniques <sup> [1] </sup> , have the common goal of efficient problem solution. While they are related to each other and share some concepts, the difference lies in what is emphasized at each time.
 
 Computational complexity theory, studies the performance with respect to input data size. Trying to design algorithmic solutions that have the least / fastest dependence on data size, regardless of underlying architecture. Code optimization techniques, on the other hand, focus on the architecture and the specific constants which enter those computational complexity estimations.
 
@@ -25,13 +25,19 @@ Systems that operate in Real-Time are examples where both factors can be critica
 ###General Principles
 
 
-* __Keep it DRY and Cache__ : The general concept of caching involves avoiding re-computation/re-loading of a result if not necessary. This can be seen as a variation of Dont Repeat Yourself principle [2]. Even dynamic programming can be seen as a variation of caching, in the sense that it stores intermediate results saving re-computation time and resources.
-* __KISS it, simpler can be faster__  :  Keep it simple [3], makes various other techniques easier to apply and modify. ( A plethora of Software Engineering methods can help in this [26], [25] )
+* __Keep it DRY and Cache__ : The general concept of caching involves avoiding re-computation/re-loading of a result if not necessary. This can be seen as a variation of Dont Repeat Yourself principle <sup> [2] </sup> . Even dynamic programming can be seen as a variation of caching, in the sense that it stores intermediate results saving re-computation time and resources.
+
+* __KISS it, simpler can be faster__  :  Keep it simple <sup> [3] </sup> , makes various other techniques easier to apply and modify. ( A plethora of Software Engineering methods can help in this <sup> [25], [26] </sup>  )
+
 * __Sosi ample free orginizd, So simple if re-organized__ : Dont hesitate to re-organize if needed. Many times sth can be re-organized, re-structured in a much simpler / faster way while retaining its original functionality (concept of isomorphism). For example, the expression (10+5*2)^2 is the simple constant 400, another example is the transformation from infix expression notation to prefix (Polish) notation which can be evaluated faster in one pass.
-* __Divide into subproblems and Conquer the solution__ : Subproblems can be easier/faster to solve and combine for the global solution. Sorting algorithms are great examples of that. [4], [Sorting Algorithms in JavaScript](https://github.com/foo123/SortingAlgorithms)
-* __More helping hands are always welcome__ : Spread the work load, subdivide, share, parallelize if possible. [5]
+
+* __Divide into subproblems and Conquer the solution__ : Subproblems can be easier/faster to solve and combine for the global solution. Sorting algorithms are great examples of that <sup> [4] </sup> , [Sorting Algorithms in JavaScript](https://github.com/foo123/SortingAlgorithms)
+
+* __More helping hands are always welcome__ : Spread the work load, subdivide, share, parallelize if possible <sup> [5] </sup> .
+
 * __United we Stand and Deliver__ : Having data together in a contiguous chunk, instead of scattered around here and there, makes it faster to load and process as a single block, instead of accessing many smaller chunks (eg. vector/pipeline machines, database queries).
-* __A little Laziness never hurt anyone__ : So true, each time a program is executed, only some of its data and functionality are used. Delaying to load and initialize (being lazy) all the data and functionality untill needed, can go a long way. [6]
+
+* __A little Laziness never hurt anyone__ : So true, each time a program is executed, only some of its data and functionality are used. Delaying to load and initialize (being lazy) all the data and functionality untill needed, can go a long way <sup> [6] </sup> .
 
 
 __Further Notes__
@@ -44,7 +50,7 @@ Some of the optimization techniques can be automated (eg in compilers), while ot
 
 Some times there is a trade-off between space/time resources. Increasing speed might result in increasing space/memory requirements (__caching__ is a classic example of that). 
 
-The 90-10 (or 80-20 or other variations) rule of thumb, states that __90 percent of the time__ is spent on __10 percent of the code__ (eg a loop). Optimizing this part of the code can result in great benefits. (see for example  Knuth [7])
+The 90-10 (or 80-20 or other variations) rule of thumb, states that __90 percent of the time__ is spent on __10 percent of the code__ (eg a loop). Optimizing this part of the code can result in great benefits. (see for example  Knuth <sup> [7] </sup> )
 
 One optimization technique (eg simplification) can lead to the application of another optimization technique (eg constant substitution) and this in turn can lead back to the further application of the first optimization technique (or others). Doors can open.
 
@@ -86,7 +92,7 @@ __Arithmetic Operations__
 ####Methods
 
 
-* __Register allocation__ : Since register memory is fastest way to access heavily used data, it is desirable (eg compilers, real-time systems) to allocate some data in an optimum sense in the cpu registers during a heavy-load operation. There are various algorithms (based on the graph coloring problem) which provide an automated way for this kind of optimization. Other times a programmer can explicitly declare a variable that is allocated in the cpu registers during some part of an operation. [9]
+* __Register allocation__ : Since register memory is fastest way to access heavily used data, it is desirable (eg compilers, real-time systems) to allocate some data in an optimum sense in the cpu registers during a heavy-load operation. There are various algorithms (based on the graph coloring problem) which provide an automated way for this kind of optimization. Other times a programmer can explicitly declare a variable that is allocated in the cpu registers during some part of an operation <sup> [9] </sup> 
 
 
 * __Single Atom Optimizations__ : This involves various operations which optimize one cpu instruction (atom) at a time. For example some operands in an instruction, can be constants, so their values can be replaced instead of the variables. Another example is replacing exponentiation with a power of 2 with a multiplication, etc..
@@ -99,13 +105,13 @@ __Arithmetic Operations__
 ###Language-independent optimization
 
 
-* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule [12],  Karatsuba Multiplication [13],  fast complex multiplication [14], fast matrix multiplication [15],  [16].
+* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule <sup> [12] </sup> ,  Karatsuba Multiplication <sup> [13] </sup> ,  fast complex multiplication <sup> [14] </sup> , fast matrix multiplication <sup> [15],  [16] </sup> .
 
 
 * __Constant Substitution/Propagation__ : Many times an expression is under all cases evaluated to a single constant, the constant value can be replaced instead of the more complex and slower expression (sometimes compilers do that).
 
 
-* __Inline Function/Routine Calls__ : Calling a function or routine, involves many operations from the part of the cpu, it has to push onto the stack the current program state and branch to another location, and then do the reverse procedure. This can be slow when used inside heavy-load operations, inlining the function body can be much faster without all this overhead (sometimes compilers do that). [17]
+* __Inline Function/Routine Calls__ : Calling a function or routine, involves many operations from the part of the cpu, it has to push onto the stack the current program state and branch to another location, and then do the reverse procedure. This can be slow when used inside heavy-load operations, inlining the function body can be much faster without all this overhead (sometimes compilers do that) <sup> [17] </sup> 
 
 
 * __Combining Flow Transfers__ : IF/THEN instructions and logic are, in essence, cpu branch instructions. Branch instructions involve changing the program pointer and going to a new location. This can be slower if many jump instructions are used. However re-arranging the IF/THEN statements (factorizing common code, using De Morgan's rules for logic simplification etc..) can result in isomorphic functionality with fewer and more efficient logic and as a result fewer and more efficient branch instructions
@@ -120,13 +126,15 @@ __Arithmetic Operations__
 * __Common Code Factorisation__ : Many times the same block of code is present in different branches, for example the program has to do some common functionality and then something else depending on some parameter. This common code can be factored out of the branches and thus eliminate unneeded redundancy , latency and size.
 
 
-* __Strength Reduction__ : This involves transforming an operation (eg an expression) into an equivalent one which is faster. Common cases involve replacing exponentiation with multiplication and multiplication with addition (eg inside a loop). This technique can result in great efficiency stemming from the fact that simpler but equivalent operations are several cpu cycles faster (usually implemented in hardware) than their more complex equivalents (usually implemented in software) [18]
+* __Strength Reduction__ : This involves transforming an operation (eg an expression) into an equivalent one which is faster. Common cases involve replacing exponentiation with multiplication and multiplication with addition (eg inside a loop). This technique can result in great efficiency stemming from the fact that simpler but equivalent operations are several cpu cycles faster (usually implemented in hardware) than their more complex equivalents (usually implemented in software) <sup> [18] </sup> 
 
 
-* __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful. [reference missing]
+* __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful.  <sup> [reference missing] </sup> . Similar to this, is the handling of common/frequent computations (depending on application) with fine-tuned or faster code.
 
 
 * __Exploiting Mathematical Theorems/Relations__ : Some times a computation can be performed in an equivalent but more efficient way by using some mathematical theorem, transformation or knowledge (eg. Gauss method of solving Systems of Linear equations, Fast Fourier Transforms, Fermat's Little Theorem,  Taylor-Mclaurin Series Expasions, Trigonometric Identities, etc..). This can go a long way. It is good to refresh your mathematical knowledge every now and then.
+
+* __Using Efficient Data Structures__ : Data structures are the counterpart of algorithms (in the space domain), each efficient algorithm needs an associated efficient data structure for the specific task. In many cases using an appropriate data structure can make all the difference (eg. database designers and search engine developers know this very well) <sup> [27], [28] </sup> 
 
 
 
@@ -135,7 +143,7 @@ __Loop Optimizations__
 Perhaps the most important code optimization techniques are the ones involving loops.
 
 
-* __Code Motion / Loop Invariants__ : Sometimes code inside a loop is independent of the loop index, can be moved out of the loop and computed only once (it is a loop invariant). This results in the loop doing fewer operations (sometimes compilers do that). [19], [20]
+* __Code Motion / Loop Invariants__ : Sometimes code inside a loop is independent of the loop index, can be moved out of the loop and computed only once (it is a loop invariant). This results in the loop doing fewer operations (sometimes compilers do that) <sup> [19], [20] </sup> 
 
 __example:__
 
@@ -219,7 +227,7 @@ else
 ```
 
 
-* __Array Linearization__ : This involves handling a multi-dimensional array in a loop, as if it was a (simpler) one-dimensional array. Most times multi-dimensional arrays (eg 2D arrays NxM) use a linearization scheme, when stored in memory. Same scheme can be used to access the array data as if it is one big 1-dimensional array. This results in using a single loop instead of multiple nested loops. [21], [22]
+* __Array Linearization__ : This involves handling a multi-dimensional array in a loop, as if it was a (simpler) one-dimensional array. Most times multi-dimensional arrays (eg 2D arrays NxM) use a linearization scheme, when stored in memory. Same scheme can be used to access the array data as if it is one big 1-dimensional array. This results in using a single loop instead of multiple nested loops <sup> [21], [22] </sup> 
 
 __example:__
 
@@ -246,7 +254,7 @@ for (i=0; i<400; i++)
 ```
 
 
-* __Loop Unrolling__ : Loop unrolling involves reducing the number of executions of a loop by performing the computations corresponding to two (or more) loop iterations in a single loop iteration. This is partial loop unrolling, full loop unrolling involves eliminating the loop completely and doing all the iterations explicitly in the code (for example for small loops where the number of iterations is fixed). Loop unrolling results in the loop (and as a consequence all the overhead associated with each loop iteration) executing fewer times. In processors which allow pipelining or parallel computations, loop unroling can have an additional benefit, the next unrolled iteration can start while the previous unrolled iteration is being computed or loaded without waiting to finish. Thus loop speed can increase even more. [23]
+* __Loop Unrolling__ : Loop unrolling involves reducing the number of executions of a loop by performing the computations corresponding to two (or more) loop iterations in a single loop iteration. This is partial loop unrolling, full loop unrolling involves eliminating the loop completely and doing all the iterations explicitly in the code (for example for small loops where the number of iterations is fixed). Loop unrolling results in the loop (and as a consequence all the overhead associated with each loop iteration) executing fewer times. In processors which allow pipelining or parallel computations, loop unroling can have an additional benefit, the next unrolled iteration can start while the previous unrolled iteration is being computed or loaded without waiting to finish. Thus loop speed can increase even more <sup> [23] </sup> 
 
 __example:__
 
@@ -312,8 +320,10 @@ Database Access can be expensive, this means it is usually better to fetch the n
 * __Make application code faster/lighter__ : This draws from the previous principles about code optimization in general. Efficient application code can save both server and user resources. There is a reason why Facebook created HipHop VM ..
 
 
-* __Minimalism is an art form__ : Having web pages and applications with tons of html, images, (not to mention a ton of advertisements) etc, etc.. is not necessarily better design, and of course makes page load time slower. Therefore having minimal pages and doing updates in small chunks using AJAX and JSON (that is what web 2.0 was all about), instead of reloading a whole page each time, can go a long way. This is one reason why __Template Engines__ and __MVC Frameworks__ were created. Minimalism does not need to sacrifice the artistic dimension, minimalism IS an art form.
+* __Minimalism is an art form__ : Having web pages and applications with tons of html, images, (not to mention a ton of advertisements) etc, etc.. is not necessarily better design, and of course makes page load time slower. Therefore having minimal pages and doing updates in small chunks using AJAX and JSON (that is what web 2.0 was all about), instead of reloading a whole page each time, can go a long way. This is one reason why [Template Engines](http://en.wikipedia.org/wiki/Template_engine) and [MVC Frameworks](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) were created. Minimalism does not need to sacrifice the artistic dimension, [Minimalism](http://en.wikipedia.org/wiki/Minimalism) __IS__ an art form.
 
+
+![Zen Circle](/zen-circle.jpg)
 
 
 ###References
@@ -344,6 +354,10 @@ Database Access can be expensive, this means it is usually better to fetch the n
 * http://en.wikipedia.org/wiki/Loop_unwinding
 * http://en.wikipedia.org/wiki/List_of_software_development_philosophies
 * http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
+* http://en.wikipedia.org/wiki/Data_structure
+* http://en.wikipedia.org/wiki/List_of_data_structures
+* http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+* http://en.wikipedia.org/wiki/Template_engine
 
 
 [1]: http://en.wikipedia.org/wiki/Code_optimization
@@ -372,3 +386,5 @@ Database Access can be expensive, this means it is usually better to fetch the n
 [24]: http://en.wikipedia.org/wiki/Computational_complexity_theory
 [25]: http://en.wikipedia.org/wiki/List_of_software_development_philosophies
 [26]: http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
+[27]: http://en.wikipedia.org/wiki/Data_structure
+[28]: http://en.wikipedia.org/wiki/List_of_data_structures
