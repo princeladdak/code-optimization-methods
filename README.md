@@ -314,7 +314,7 @@ Database Access can be expensive, this means it is usually better to fetch the n
 * __Cache, cache and then cache some more__ : This can include everything, from whole pages, to .css files, .js files, images etc.. Cache in the server, cache in the client, cache in-between, cache everywhere..
 
 
-* __Exploiting Redundancy__ : For web applications, this is usually implemented by exploiting some cloud architecture in order to store (static) files, which can be loaded (through the cloud) from more than one location. Other approaches include, Load balancing (having redundancy not only for static files, but also for servers).
+* __Exploiting Redundancy__ : For web applications, this is usually implemented by exploiting some [cloud architecture](http://en.wikipedia.org/wiki/Cloud_computing) in order to store (static) files, which can be loaded (through the cloud) from more than one location. Other approaches include, [Load balancing](http://en.wikipedia.org/wiki/Load_balancing_%28computing%29) ( having redundancy not only for static files, but also for servers ).
 
 
 * __Make application code faster/lighter__ : This draws from the previous principles about code optimization in general. Efficient application code can save both server and user resources. There is a reason why Facebook created HipHop VM ..
@@ -356,6 +356,8 @@ Database Access can be expensive, this means it is usually better to fetch the n
 * http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
 * http://en.wikipedia.org/wiki/Data_structure
 * http://en.wikipedia.org/wiki/List_of_data_structures
+* http://en.wikipedia.org/wiki/Cloud_computing
+* http://en.wikipedia.org/wiki/Load_balancing_%28computing%29
 * http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 * http://en.wikipedia.org/wiki/Template_engine
 
