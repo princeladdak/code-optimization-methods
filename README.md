@@ -323,7 +323,7 @@ Database Access can be expensive, this means it is usually better to fetch the n
 * __Minimalism is an art form__ : Having web pages and applications with tons of html, images, (not to mention a ton of advertisements) etc, etc.. is not necessarily better design, and of course makes page load time slower. Therefore having minimal pages and doing updates in small chunks using AJAX and JSON (that is what web 2.0 was all about), instead of reloading a whole page each time, can go a long way. This is one reason why [Template Engines](http://en.wikipedia.org/wiki/Template_engine) and [MVC Frameworks](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) were created. Minimalism does not need to sacrifice the artistic dimension, [Minimalism](http://en.wikipedia.org/wiki/Minimalism) __IS__ an art form.
 
 
-![Zen Circle](/zen-circle.jpg)
+[![Zen Circle](/zen-circle.jpg)](http://en.wikipedia.org/wiki/Ens%C5%8D)
 
 
 ###References
