@@ -19,7 +19,7 @@ Both computational complexity theory <sup> [24] </sup> and code optimization tec
 
 Computational complexity theory, studies the performance with respect to input data size. Trying to design algorithmic solutions that have the least / fastest dependence on data size, regardless of underlying architecture. Code optimization techniques, on the other hand, focus on the architecture and the specific constants which enter those computational complexity estimations.
 
-Systems that operate in Real-Time are examples where both factors can be critical.
+Systems that operate in Real-Time are examples where both factors can be critical (eg. [Real-time Image Processing in JavaScript](https://github.com/foo123/FILTER.js) , yeah i know i am the author :) ).
 
 
 ###General Principles
