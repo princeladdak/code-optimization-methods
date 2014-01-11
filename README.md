@@ -105,7 +105,7 @@ __Arithmetic Operations__
 ###Language-independent optimization
 
 
-* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule <sup> [12] </sup> ,  Karatsuba Multiplication <sup> [13] </sup> ,  fast complex multiplication <sup> [14] </sup> , fast matrix multiplication <sup> [15],  [16] </sup> .
+* __Re-arranging Expressions__ : More efficient code for the evaluation of an expression can often be produced if the operations occuring in the expression are evaluated in a different order. Classic examples are Horner's Rule <sup> [12] </sup>,  Karatsuba Multiplication <sup> [13] </sup>,  fast complex multiplication <sup> [14] </sup>, fast matrix multiplication <sup> [15],  [16] </sup>,  fast exponentiation <sup> [29],  [30] </sup>.
 
 
 * __Constant Substitution/Propagation__ : Many times an expression is under all cases evaluated to a single constant, the constant value can be replaced instead of the more complex and slower expression (sometimes compilers do that).
@@ -390,3 +390,5 @@ Database Access can be expensive, this means it is usually better to fetch the n
 [26]: http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
 [27]: http://en.wikipedia.org/wiki/Data_structure
 [28]: http://en.wikipedia.org/wiki/List_of_data_structures
+[29]: http://en.wikipedia.org/wiki/Exponentiation_by_squaring
+[30]: http://homepages.math.uic.edu/~leon/cs-mcs401-f07/handouts/fastexp.pdf
