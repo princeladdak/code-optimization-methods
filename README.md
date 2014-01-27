@@ -111,7 +111,7 @@ __Arithmetic Operations__
 * __Constant Substitution/Propagation__ : Many times an expression is under all cases evaluated to a single constant, the constant value can be replaced instead of the more complex and slower expression (sometimes compilers do that).
 
 
-* __Inline Function/Routine Calls__ : Calling a function or routine, involves many operations from the part of the cpu, it has to push onto the stack the current program state and branch to another location, and then do the reverse procedure. This can be slow when used inside heavy-load operations, inlining the function body can be much faster without all this overhead (sometimes compilers do that) <sup> [17] </sup> 
+* __Inline Function/Routine Calls__ : Calling a function or routine, involves many operations from the part of the cpu, it has to push onto the stack the current program state and branch to another location, and then do the reverse procedure. This can be slow when used inside heavy-load operations, inlining the function body can be much faster without all this overhead. Sometimes compilers do that, other times a programmer can declare or annotate a function as **inline** explicitly. <sup> [17] </sup> 
 
 
 * __Combining Flow Transfers__ : IF/THEN instructions and logic are, in essence, cpu branch instructions. Branch instructions involve changing the program pointer and going to a new location. This can be slower if many jump instructions are used. However re-arranging the IF/THEN statements (factorizing common code, using De Morgan's rules for logic simplification etc..) can result in isomorphic functionality with fewer and more efficient logic and as a result fewer and more efficient branch instructions
@@ -129,7 +129,7 @@ __Arithmetic Operations__
 * __Strength Reduction__ : This involves transforming an operation (eg an expression) into an equivalent one which is faster. Common cases involve replacing exponentiation with multiplication and multiplication with addition (eg inside a loop). This technique can result in great efficiency stemming from the fact that simpler but equivalent operations are several cpu cycles faster (usually implemented in hardware) than their more complex equivalents (usually implemented in software) <sup> [18] </sup> 
 
 
-* __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful.  <sup> [reference missing] </sup> . Similar to this, is the handling of common/frequent computations (depending on application) with fine-tuned or faster code.
+* __Handling Trivial/Special Cases__ : Sometimes a complex computation has some trivial or special cases which can be handled much more efficiently by a reduced/simplified version of the computation (eg computing a^b, can handle the special cases for a,b=0,1,2 by a simpler method). Trivial cases occur with some frequency in applications, so simplified special case code can be quite useful.  <sup> [31], [32] </sup> . Similar to this, is the handling of common/frequent computations (depending on application) with fine-tuned or faster code.
 
 
 * __Exploiting Mathematical Theorems/Relations__ : Some times a computation can be performed in an equivalent but more efficient way by using some mathematical theorem, transformation or knowledge (eg. Gauss method of solving Systems of Linear equations, Fast Fourier Transforms, Fermat's Little Theorem,  Taylor-Mclaurin Series Expasions, Trigonometric Identities, etc..). This can go a long way. It is good to refresh your mathematical knowledge every now and then.
@@ -392,3 +392,5 @@ Database Access can be expensive, this means it is usually better to fetch the n
 [28]: http://en.wikipedia.org/wiki/List_of_data_structures
 [29]: http://en.wikipedia.org/wiki/Exponentiation_by_squaring
 [30]: http://homepages.math.uic.edu/~leon/cs-mcs401-f07/handouts/fastexp.pdf
+[31]: https://www.facebook.com/notes/facebook-engineering/three-optimization-tips-for-c/10151361643253920
+[32]: http://www.slideshare.net/andreialexandrescu1/three-optimization-tips-for-c-15708507
