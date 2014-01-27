@@ -360,7 +360,8 @@ Database Access can be expensive, this means it is usually better to fetch the n
 * http://en.wikipedia.org/wiki/Load_balancing_%28computing%29
 * http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 * http://en.wikipedia.org/wiki/Template_engine
-
+* https://www.facebook.com/notes/facebook-engineering/three-optimization-tips-for-c/10151361643253920
+* http://www.slideshare.net/andreialexandrescu1/three-optimization-tips-for-c-15708507
 
 [1]: http://en.wikipedia.org/wiki/Code_optimization
 [2]: http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
